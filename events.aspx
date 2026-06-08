@@ -1,0 +1,86 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="events.aspx.cs" Inherits="YourProjectName.events" %>
+<!DOCTYPE html>
+<html lang="en">
+<head runat="server">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KBEC Events</title>
+    <link rel="stylesheet" href="kbec.css">
+    <style>
+        .events-page {
+            padding-top: 120px;
+            text-align: center;
+        }
+
+        .events-page-header {
+            display: flex;
+            justify-content: flex-start;
+            max-width: 1200px;
+            margin: 0 auto 24px;
+            padding: 0 20px;
+        }
+
+        .events-grid {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .event-item {
+            width: 280px;
+            background: #111;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .event-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 15px #f5c51844;
+        }
+
+        .event-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .event-item h3 {
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="events-page">
+        <div class="events-page-header">
+            <a href="kbec.aspx" class="back-home-btn">&#8592; Back</a>
+        </div>
+
+        <h1>Our Events</h1>
+
+        <div class="events-grid">
+
+            <!-- TEDx Event -->
+            <a href="event-details.aspx?event=tedx" class="event-item">
+                <img src="tedx.jpg" alt="TEDx KUET" />
+                <h3>TEDxKUET</h3>
+            </a>
+
+            <!-- KBEC NEXUS Season 2 Event -->
+            <a href="event-details.aspx?event=nexusSeason2" class="event-item">
+                <img src="KBEC nexus_2.jpg" alt="KBEC NEXUS Season 2" />
+                <h3>KBEC NEXUS SEASON 2</h3>
+            </a>
+
+        </div>
+    </section>
+
+</body>
+</html>
