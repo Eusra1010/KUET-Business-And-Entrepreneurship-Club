@@ -1,0 +1,340 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{104B449A-A25F-4011-9813-065FCB62F540}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KBEC</RootNamespace>
+    <AssemblyName>KBEC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin-add-event.aspx.cs">
+      <DependentUpon>admin-add-event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-add-event.aspx.designer.cs">
+      <DependentUpon>admin-add-event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-add-executive.aspx.cs">
+      <DependentUpon>admin-add-executive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-add-executive.aspx.designer.cs">
+      <DependentUpon>admin-add-executive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-add-notice.aspx.cs">
+      <DependentUpon>admin-add-notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-add-notice.aspx.designer.cs">
+      <DependentUpon>admin-add-notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-add-sponsor.aspx.cs">
+      <DependentUpon>admin-add-sponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-add-sponsor.aspx.designer.cs">
+      <DependentUpon>admin-add-sponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-applications.aspx.cs">
+      <DependentUpon>admin-applications.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-applications.aspx.designer.cs">
+      <DependentUpon>admin-applications.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-dashboard.aspx.cs">
+      <DependentUpon>admin-dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-dashboard.aspx.designer.cs">
+      <DependentUpon>admin-dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-edit-event.aspx.cs">
+      <DependentUpon>admin-edit-event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-edit-event.aspx.designer.cs">
+      <DependentUpon>admin-edit-event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-edit-executive.aspx.cs">
+      <DependentUpon>admin-edit-executive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-edit-executive.aspx.designer.cs">
+      <DependentUpon>admin-edit-executive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-edit-member.aspx.cs">
+      <DependentUpon>admin-edit-member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-edit-member.aspx.designer.cs">
+      <DependentUpon>admin-edit-member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-edit-sponsor.aspx.cs">
+      <DependentUpon>admin-edit-sponsor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-edit-sponsor.aspx.designer.cs">
+      <DependentUpon>admin-edit-sponsor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-events.aspx.cs">
+      <DependentUpon>admin-events.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-events.aspx.designer.cs">
+      <DependentUpon>admin-events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-login.aspx.cs">
+      <DependentUpon>admin-login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-login.aspx.designer.cs">
+      <DependentUpon>admin-login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-logout.aspx.cs">
+      <DependentUpon>admin-logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-logout.aspx.designer.cs">
+      <DependentUpon>admin-logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-notices.aspx.cs">
+      <DependentUpon>admin-notices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-notices.aspx.designer.cs">
+      <DependentUpon>admin-notices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-remove-executive.aspx.cs">
+      <DependentUpon>admin-remove-executive.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-remove-executive.aspx.designer.cs">
+      <DependentUpon>admin-remove-executive.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin-sponsors.aspx.cs">
+      <DependentUpon>admin-sponsors.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin-sponsors.aspx.designer.cs">
+      <DependentUpon>admin-sponsors.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin_remove-member.aspx.cs">
+      <DependentUpon>admin_remove-member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin_remove-member.aspx.designer.cs">
+      <DependentUpon>admin_remove-member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="event-details.aspx.cs">
+      <DependentUpon>event-details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="events.aspx.cs">
+      <DependentUpon>events.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="executives.aspx.cs">
+      <DependentUpon>executives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="executives.aspx.designer.cs">
+      <DependentUpon>executives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="get-member.aspx.cs">
+      <DependentUpon>get-member.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="get-member.aspx.designer.cs">
+      <DependentUpon>get-member.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="kbec.aspx.cs">
+      <DependentUpon>kbec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member-login.aspx.cs">
+      <DependentUpon>member-login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member-login.aspx.designer.cs">
+      <DependentUpon>member-login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member-logout.aspx.cs">
+      <DependentUpon>member-logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member-logout.aspx.designer.cs">
+      <DependentUpon>member-logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member-profile.aspx.cs">
+      <DependentUpon>member-profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member-profile.aspx.designer.cs">
+      <DependentUpon>member-profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="member-signup.aspx.cs">
+      <DependentUpon>member-signup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="member-signup.aspx.designer.cs">
+      <DependentUpon>member-signup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notices.aspx.cs">
+      <DependentUpon>notices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notices.aspx.designer.cs">
+      <DependentUpon>notices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin-add-event.aspx" />
+    <Content Include="admin-add-executive.aspx" />
+    <Content Include="admin-add-notice.aspx" />
+    <Content Include="admin-add-sponsor.aspx" />
+    <Content Include="admin-applications.aspx" />
+    <Content Include="admin-dashboard.aspx" />
+    <Content Include="admin-edit-event.aspx" />
+    <Content Include="admin-edit-executive.aspx" />
+    <Content Include="admin-edit-member.aspx" />
+    <Content Include="admin-edit-sponsor.aspx" />
+    <Content Include="admin-events.aspx" />
+    <Content Include="admin-login.aspx" />
+    <Content Include="admin-logout.aspx" />
+    <Content Include="admin-notices.aspx" />
+    <Content Include="admin-remove-executive.aspx" />
+    <Content Include="admin-sponsors.aspx" />
+    <Content Include="admin.css" />
+    <Content Include="admin_remove-member.aspx" />
+    <Content Include="auth.css" />
+    <Content Include="event-details.aspx" />
+    <Content Include="event-details.html" />
+    <Content Include="event-details.js" />
+    <Content Include="events.aspx" />
+    <Content Include="events.html" />
+    <Content Include="executives.aspx" />
+    <Content Include="executives.css" />
+    <Content Include="get-member.aspx" />
+    <Content Include="images\sponsors\10 minute school.jpg" />
+    <Content Include="images\sponsors\banglalink.jpg" />
+    <Content Include="images\sponsors\Bank asia.jpg" />
+    <Content Include="images\sponsors\Clemon.jpg" />
+    <Content Include="images\sponsors\NCC bank.jpg" />
+    <Content Include="images\sponsors\Polar.jpeg" />
+    <Content Include="images\sponsors\prime_bank.jpeg" />
+    <Content Include="images\sponsors\Skino.jpg" />
+    <Content Include="images\sponsors\Somoy tv.jpg" />
+    <Content Include="images\sponsors\SR dream it.jpg" />
+    <Content Include="images\sponsors\Uniliver.jpg" />
+    <Content Include="images\sponsors\Walton.jpg" />
+    <Content Include="KBEC nexus_2.jpg" />
+    <Content Include="kbec-video.mp4" />
+    <Content Include="kbec.aspx" />
+    <Content Include="kbec.css" />
+    <Content Include="kbec.html" />
+    <Content Include="kbec.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="member-login.aspx" />
+    <Content Include="member-logout.aspx" />
+    <Content Include="member-profile.aspx" />
+    <Content Include="member-signup.aspx" />
+    <Content Include="notices.aspx" />
+    <Content Include="profile.css" />
+    <Content Include="web.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55678/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

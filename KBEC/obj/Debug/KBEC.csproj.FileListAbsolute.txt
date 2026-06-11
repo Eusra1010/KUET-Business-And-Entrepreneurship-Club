@@ -1,0 +1,10 @@
+E:\KBEC\KBEC\bin\KBEC.dll
+E:\KBEC\KBEC\bin\KBEC.pdb
+E:\KBEC\KBEC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\KBEC\KBEC\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\KBEC\KBEC\obj\Debug\KBEC.csproj.AssemblyReference.cache
+E:\KBEC\KBEC\obj\Debug\KBEC.csproj.CoreCompileInputs.cache
+E:\KBEC\KBEC\obj\Debug\KBEC.csproj.Up2Date
+E:\KBEC\KBEC\obj\Debug\KBEC.dll
+E:\KBEC\KBEC\obj\Debug\KBEC.pdb
+E:\KBEC\KBEC\bin\KBEC.dll.config
