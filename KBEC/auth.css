@@ -35,6 +35,10 @@ body {
     box-shadow: 0 0 40px rgba(245, 197, 24, 0.06);
 }
 
+.auth-box-wide {
+    max-width: 680px;
+}
+
 /* Logo */
 .auth-logo {
     display: flex;
@@ -44,19 +48,19 @@ body {
     justify-content: center;
 }
 
-.auth-logo img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+    .auth-logo img {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
 
-.auth-logo h2 {
-    color: #f5c518;
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-    font-weight: 700;
-}
+    .auth-logo h2 {
+        color: #f5c518;
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
 
 /* Title */
 .auth-title {
@@ -84,17 +88,17 @@ body {
     text-align: center;
 }
 
-.auth-server-msg.success {
-    background: rgba(46, 204, 113, 0.12);
-    color: #2ecc71;
-    border: 1px solid rgba(46, 204, 113, 0.3);
-}
+    .auth-server-msg.success {
+        background: rgba(46, 204, 113, 0.12);
+        color: #2ecc71;
+        border: 1px solid rgba(46, 204, 113, 0.3);
+    }
 
-.auth-server-msg.error {
-    background: rgba(231, 76, 60, 0.12);
-    color: #e74c3c;
-    border: 1px solid rgba(231, 76, 60, 0.3);
-}
+    .auth-server-msg.error {
+        background: rgba(231, 76, 60, 0.12);
+        color: #e74c3c;
+        border: 1px solid rgba(231, 76, 60, 0.3);
+    }
 
 /* Form */
 .auth-form {
@@ -109,11 +113,11 @@ body {
     gap: 6px;
 }
 
-.form-group label {
-    color: #ccc;
-    font-size: 0.88rem;
-    font-weight: 500;
-}
+    .form-group label {
+        color: #ccc;
+        font-size: 0.88rem;
+        font-weight: 500;
+    }
 
 .input-wrap {
     position: relative;
@@ -131,6 +135,7 @@ body {
     font-size: 0.95rem;
     outline: none;
     transition: border-color 0.2s;
+    font-family: 'Segoe UI', sans-serif;
 }
 
 .input-wrap .form-input {
@@ -159,9 +164,9 @@ body {
     padding: 4px;
 }
 
-.toggle-pw:hover {
-    color: #fff;
-}
+    .toggle-pw:hover {
+        color: #fff;
+    }
 
 /* Field errors */
 .field-error {
@@ -186,10 +191,21 @@ body {
     transition: width 0.3s, background 0.3s;
 }
 
-.strength-bar.weak   { background: #e74c3c; }
-.strength-bar.fair   { background: #e67e22; }
-.strength-bar.good   { background: #f5c518; }
-.strength-bar.strong { background: #2ecc71; }
+    .strength-bar.weak {
+        background: #e74c3c;
+    }
+
+    .strength-bar.fair {
+        background: #e67e22;
+    }
+
+    .strength-bar.good {
+        background: #f5c518;
+    }
+
+    .strength-bar.strong {
+        background: #2ecc71;
+    }
 
 /* Strength message */
 .strength-msg {
@@ -197,10 +213,21 @@ body {
     min-height: 16px;
 }
 
-.strength-msg.weak   { color: #e74c3c; }
-.strength-msg.fair   { color: #e67e22; }
-.strength-msg.good   { color: #f5c518; }
-.strength-msg.strong { color: #2ecc71; }
+    .strength-msg.weak {
+        color: #e74c3c;
+    }
+
+    .strength-msg.fair {
+        color: #e67e22;
+    }
+
+    .strength-msg.good {
+        color: #f5c518;
+    }
+
+    .strength-msg.strong {
+        color: #2ecc71;
+    }
 
 /* Submit button */
 .auth-btn {
@@ -214,18 +241,18 @@ body {
     font-weight: 700;
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
-    margin-top: 6px;
     letter-spacing: 0.5px;
+    font-family: 'Segoe UI', sans-serif;
 }
 
-.auth-btn:hover {
-    background: #ffd740;
-    transform: translateY(-1px);
-}
+    .auth-btn:hover {
+        background: #ffd740;
+        transform: translateY(-1px);
+    }
 
-.auth-btn:active {
-    transform: translateY(0);
-}
+    .auth-btn:active {
+        transform: translateY(0);
+    }
 
 /* Switch link */
 .auth-switch {
@@ -234,17 +261,147 @@ body {
     font-size: 0.88rem;
 }
 
-.auth-switch a {
-    color: #f5c518;
+    .auth-switch a {
+        color: #f5c518;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .auth-switch a:hover {
+            text-decoration: underline;
+        }
+
+/* Back link row */
+.auth-back-row {
+    text-align: center;
+    margin-top: 4px;
+}
+
+.auth-back-link {
+    color: #555;
     text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.2s;
+    display: inline-block;
+    padding: 4px 0;
+}
+
+    .auth-back-link:hover {
+        color: #f5c518;
+    }
+
+/* ===== SIGNUP SPECIFIC ===== */
+.signup-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.signup-textarea {
+    min-height: 100px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* Upload box */
+.signup-upload-box {
+    border: 2px dashed #2a2a2a;
+    border-radius: 12px;
+    padding: 22px 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    background: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+    .signup-upload-box:hover {
+        border-color: #f5c51866;
+        background: rgba(245,197,24,0.04);
+    }
+
+.signup-upload-icon {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.signup-upload-text {
+    color: #ccc;
+    font-size: 0.9rem;
     font-weight: 600;
 }
 
-.auth-switch a:hover {
-    text-decoration: underline;
+.signup-upload-hint {
+    color: #555;
+    font-size: 0.76rem;
+}
+
+.signup-upload-filename {
+    color: #2ecc71;
+    font-size: 0.8rem;
+    margin-top: 4px;
+}
+
+/* Action buttons row — Cancel + Submit side by side */
+.signup-action-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+}
+
+.signup-cancel-btn {
+    padding: 13px 24px;
+    border-radius: 8px;
+    border: 1px solid #2a2a2a;
+    background: transparent;
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+    white-space: nowrap;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .signup-cancel-btn:hover {
+        border-color: #f5c51844;
+        color: #f5c518;
+    }
+
+.signup-submit-btn {
+    margin-top: 0;
+}
+
+.req {
+    color: #e74c3c;
+    font-weight: 400;
 }
 
 /* Responsive */
+@media (max-width: 600px) {
+    .signup-row {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-action-row {
+        grid-template-columns: 1fr;
+    }
+
+    .signup-cancel-btn {
+        order: 2;
+        text-align: center;
+    }
+
+    .signup-submit-btn {
+        order: 1;
+    }
+}
+
 @media (max-width: 480px) {
     .auth-box {
         padding: 28px 20px;
@@ -253,4 +410,37 @@ body {
     .auth-title {
         font-size: 1.4rem;
     }
+}
+/* Force override — prevents kbec.css from breaking auth form inputs */
+.auth-wrapper input,
+.auth-wrapper textarea,
+.auth-wrapper select {
+    background: #1a1a1a !important;
+    border: 1px solid #2a2a2a !important;
+    border-radius: 8px !important;
+    padding: 12px 14px !important;
+    color: #fff !important;
+    font-size: 0.95rem !important;
+    font-family: 'Segoe UI', sans-serif !important;
+    width: 100% !important;
+    outline: none !important;
+    box-sizing: border-box !important;
+}
+
+    .auth-wrapper input:focus,
+    .auth-wrapper textarea:focus {
+        border-color: #f5c518 !important;
+        box-shadow: 0 0 0 3px rgba(245, 197, 24, 0.08) !important;
+    }
+
+    .auth-wrapper input::placeholder,
+    .auth-wrapper textarea::placeholder {
+        color: #555 !important;
+    }
+
+.auth-wrapper body {
+    background: #0a0a0a !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }

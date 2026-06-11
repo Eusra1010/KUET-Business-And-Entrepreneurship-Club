@@ -19,9 +19,9 @@
         string password = txtPassword.Text.Trim();
         string secretKey = txtSecretKey.Text.Trim();
 
-        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(secretKey))
         {
-            message = "Email and password are required.";
+            message = "All fields are required.";
             messageClass = "auth-server-msg error";
             return;
         }
@@ -30,51 +30,24 @@
         using (SqlConnection conn = new SqlConnection(connStr))
         {
             conn.Open();
+            string query = "SELECT Id, Name FROM Admins WHERE Email=@Email AND PasswordHash=@Password AND SecretKey=@SecretKey";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@Password", password);
+            cmd.Parameters.AddWithValue("@SecretKey", secretKey);
+            SqlDataReader reader = cmd.ExecuteReader();
 
-            if (!string.IsNullOrEmpty(secretKey))
-            {
-                string superQuery = "SELECT Id, Name FROM Admins WHERE Email=@Email AND PasswordHash=@Password AND SecretKey=@SecretKey";
-                SqlCommand superCmd = new SqlCommand(superQuery, conn);
-                superCmd.Parameters.AddWithValue("@Email", email);
-                superCmd.Parameters.AddWithValue("@Password", password);
-                superCmd.Parameters.AddWithValue("@SecretKey", secretKey);
-                SqlDataReader superReader = superCmd.ExecuteReader();
-
-                if (superReader.Read())
-                {
-                    Session.Clear();
-                    Session["AdminId"] = superReader["Id"].ToString();
-                    Session["AdminName"] = superReader["Name"].ToString();
-                    Session["AdminRole"] = "SuperAdmin";
-                    superReader.Close();
-                    Response.Redirect("kbec.aspx");
-                    return;
-                }
-                superReader.Close();
-                message = "Invalid credentials or secret code.";
-                messageClass = "auth-server-msg error";
-                return;
-            }
-
-            string memberQuery = "SELECT Id, Name, Position FROM MemberAdmins WHERE Email=@Email AND PasswordHash=@Password";
-            SqlCommand memberCmd = new SqlCommand(memberQuery, conn);
-            memberCmd.Parameters.AddWithValue("@Email", email);
-            memberCmd.Parameters.AddWithValue("@Password", password);
-            SqlDataReader memberReader = memberCmd.ExecuteReader();
-
-            if (memberReader.Read())
+            if (reader.Read())
             {
                 Session.Clear();
-                Session["AdminId"] = memberReader["Id"].ToString();
-                Session["AdminName"] = memberReader["Name"].ToString();
-                Session["AdminRole"] = "MemberAdmin";
-                Session["AdminPosition"] = memberReader["Position"].ToString();
-                memberReader.Close();
-                Response.Redirect("member-dashboard.aspx");
+                Session["AdminId"] = reader["Id"].ToString();
+                Session["AdminName"] = reader["Name"].ToString();
+                reader.Close();
+                Response.Redirect("admin-dashboard.aspx");
                 return;
             }
 
-            message = "Invalid email or password.";
+            message = "Invalid credentials or secret code.";
             messageClass = "auth-server-msg error";
         }
     }
@@ -100,23 +73,24 @@
             <div class="auth-form">
                 <div class="form-group">
                     <label>Email Address</label>
-                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-input" placeholder="Enter your email" />
+                    <asp:TextBox ID="txtEmail" runat="server" CssClass="form-input" placeholder="Enter admin email" />
                     <span id="emailError" class="field-error"></span>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
                     <div class="input-wrap">
-                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="Enter your password" />
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-input" TextMode="Password" placeholder="Enter password" />
                         <button type="button" class="toggle-pw" onclick="togglePassword('<%=txtPassword.ClientID%>', this)">Show</button>
                     </div>
                     <span id="pwError" class="field-error"></span>
                 </div>
                 <div class="form-group">
-                    <label>Secret Code <span style="color:#555;font-size:0.78rem;font-weight:400;">(Super Admin only)</span></label>
+                    <label>Secret Code</label>
                     <div class="input-wrap">
-                        <asp:TextBox ID="txtSecretKey" runat="server" CssClass="form-input" TextMode="Password" placeholder="Leave empty if not Super Admin" />
+                        <asp:TextBox ID="txtSecretKey" runat="server" CssClass="form-input" TextMode="Password" placeholder="Enter secret code" />
                         <button type="button" class="toggle-pw" onclick="togglePassword('<%=txtSecretKey.ClientID%>', this)">Show</button>
                     </div>
+                    <span id="keyError" class="field-error"></span>
                 </div>
 
                 <asp:Button ID="btnAdminLogin" runat="server" Text="Login"
@@ -139,14 +113,23 @@
             var valid = true;
             var email = document.getElementById('<%=txtEmail.ClientID%>').value.trim();
             var pw = document.getElementById('<%=txtPassword.ClientID%>').value;
+            var key = document.getElementById('<%=txtSecretKey.ClientID%>').value;
+
             if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
                 document.getElementById('emailError').textContent = 'Enter a valid email.';
                 valid = false;
             } else { document.getElementById('emailError').textContent = ''; }
+
             if (!pw) {
                 document.getElementById('pwError').textContent = 'Password is required.';
                 valid = false;
             } else { document.getElementById('pwError').textContent = ''; }
+
+            if (!key) {
+                document.getElementById('keyError').textContent = 'Secret code is required.';
+                valid = false;
+            } else { document.getElementById('keyError').textContent = ''; }
+
             return valid;
         }
     </script>
